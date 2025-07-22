@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-radial-[at_25%_25%] from-[#1A1A1A] to-[#0D0D0D] min-h-screen text-white">
+    <section class="w-full min-h-screen flex flex-col items-center justify-center p-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-[#1A1A1A] rounded-xl p-6 w-72 shadow-md flex flex-col items-center transform transition-transform duration-200 hover:scale-105">
+                <h3 class="font-bold text-lg mb-2 text-blue-400">Total Servers:</h3>
+                <h1>{{ metrics.total_servers or "No data yet!"}}</h1>
+            </div>
+
+            <div class="bg-[#1A1A1A] rounded-xl p-6 w-72 shadow-md flex flex-col items-center transform transition-transform duration-200 hover:scale-105">
+                <h3 class="font-bold text-lg mb-2 text-blue-400">Total Users:</h3>
+                <h4 class="text-sm mb-1 text-gray-400">Including duplicates</h4>
+                <h1>{{ metrics.total_users or "No data yet!"}}</h1>
+            </div>
+
+         <div class="bg-[#1A1A1A] rounded-xl p-6 w-72 shadow-md flex flex-col items-center transform transition-transform duration-200 hover:scale-105">
+                <h3 class="font-bold text-lg mb-2 text-blue-400 text-center">Time before last data receive</h3>
+                <h1>{{ metrics.timestamp.strftime('%Y-%m-%d %H:%M:%S') if metrics.timestamp else "No data yet!" }}</h1>
+            </div>   
+            
+            <div class="bg-[#1A1A1A] rounded-xl p-6 w-72 shadow-md flex flex-col items-center transform transition-transform duration-200 hover:scale-105">
+                <h3 class="font-bold text-lg mb-2 text-blue-400">Bot latency</h3>
+                <h1>{{ metrics.latency_ms ~ " ms" if metrics.latency_ms else "No data yet!" }}</h1>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFD Helper</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/static/css/pulsegradient.css">
+</head>
+<body class="bg-radial-[at_25%_25%] from-[#1A1A1A] to-[#0D0D0D] min-h-screen text-white">
+    <main class="items-center flex flex-col text-center">
+        <h1 class="text-4xl font-bold mt-20 text-blue-400">TFD Helper</h1>
+        <h2 class="text-xl font-semibold mt-2">A Discord Bot made by a TFD Player for TFD Players</h2>
+        <div class="grid grid-cols-2 mt-5 gap-2">
+            <a href="/commands" class="cursor-pointer bg-[#2E2E2E] px-4 py-2 rounded-lg text-white font-medium shadow hover:bg-[#444444] transition text-center hover:scale-105">Commands</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1126534896001765497&permissions=274877990912&integration_type=0&scope=bot+applications.commands" class="cursor-pointer bg-[#2E2E2E] px-4 py-2 rounded-lg text-white font-medium shadow hover:bg-[#444444] transition text-center hover:scale-105">Invite</a>
+            <a href="/dashboard" class="cursor-pointer bg-[#2E2E2E] px-4 py-2 rounded-lg text-white font-medium shadow hover:bg-[#444444] transition text-center hover:scale-105">Analytics</a>
+            <a href="/calc" class="cursor-pointer bg-[#2E2E2E] px-4 py-2 rounded-lg text-white font-medium shadow hover:bg-[#444444] transition text-center hover:scale-105">Calculators</a>
+            <a href="#" disabled class="cursor-not-allowed bg-[#2E2E2E] px-4 py-2 rounded-lg text-white font-medium shadow hover:bg-[#444444] transition text-center hover:scale-105">More Soon</a>
+        </div>
+    </main>
+    <section class="w-full flex flex-col items-center mt-40">
+        <h2 class="text-3xl font-bold mb-2">Statistics</h2>
+        <h3 class="text-lg font-semibold mb-1">Last updated {{ metrics.timestamp.strftime('%Y-%m-%d %H:%M:%S') if metrics.timestamp else "No data yet!" }}</h3>
+            <div class="flex flex-col md:flex-row gap-8 mt-6">
+                <div class="bg-[#1A1A1A] rounded-xl p-6 w-72 shadow-md flex flex-col items-center transform transition-transform duration-200 hover:scale-105">
+                    <h3 class="font-semibold text-lg mb-2 text-white">Total Severs</h3>
+                    <p class="text-white text-center">{{ metrics.total_servers or "No data yet!"}}</p>
+                </div>
+                <div class="bg-[#1A1A1A] rounded-xl p-6 w-72 shadow-md flex flex-col items-center transform transition-transform duration-200 hover:scale-105">
+                    <h3 class="font-semibold text-lg mb-2 text-white">Bot latency</h3>
+                    <p class="text-white text-center">{{ metrics.latency_ms ~ " ms" if metrics.latency_ms else "No data yet!" }}</p>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

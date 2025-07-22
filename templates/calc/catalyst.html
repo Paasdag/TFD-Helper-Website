@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFD Helper</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/static/javascript/catalyst.js"></script>
+</head>
+<body class="bg-radial-[at_25%_25%] from-[#1A1A1A] to-[#0D0D0D] min-h-screen text-white">
+    <main class="items-center flex flex-col text-center">
+        <h1 class="text-4xl font-bold mt-20 text-white">Catalyst calculator</h1>
+        <input type="text" id="catalystvalue" placeholder="Amount of catalysts" 
+        class="px-2 py-1 text-center mt-5 border border-white rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-white">
+        <button onclick="calculate()" class="cursor-pointer bg-[#2E2E2E] px-4 py-2 rounded-lg text-white font-medium shadow hover:bg-[#444444] transition text-center hover:scale-105 mt-5">Calculate</button>
+        <div class="mt-5 gap-2 font-semibold text-xl">
+            <p>Murky Energy Residue: <span id="murky-energy-residue">0</span></p>
+            <p>Macromolecule Biogel: <span id="macromolecule-biogel">0</span></p>
+            <p>Mixed Energy Residue: <span id="mixed-energy-residue">0</span></p>
+            <p>Advanced Neural Circut: <span id="advanced-neural-circut">0</span></p>
+        </div>
+        <button onclick="history.back()" class="cursor-pointer bg-[#2E2E2E] px-4 py-2 rounded-lg text-white font-medium shadow hover:bg-[#444444] transition text-center hover:scale-105 mt-5">Return</button>
+    </main>
+</body>
+</html>

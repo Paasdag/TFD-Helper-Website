@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Commands</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-radial-[at_25%_25%] from-[#1A1A1A] to-[#0D0D0D] min-h-screen text-white">
+    <section class="items-center flex flex-col text-center">
+        <h1 class="text-3xl font-bold mt-15">Commands</h1>
+        <div class="space-y-3 grid mt-6">
+        {% for command in commands %}
+            <div class="bg-gray-800 text-gray-200 rounded-md px-4 py-3 flex flex-col md:flex-row md:items-center md:space-x-2 space-y-1 md:space-y-0 text-sm font-mono mx-4">
+                <div class="text-gray-400 whitespace-nowrap">{{ command.cmd }}</div>
+                <div class="text-gray-300 whitespace-nowrap">&lt;username&gt;</div>
+                <div class="text-gray-400 sm:truncate">{{ command.desc }}</div>
+            </div>
+        {% endfor %}
+            <div class="bg-gray-800 text-gray-200 rounded-md px-4 py-3 flex flex-col md:flex-row md:items-center md:space-x-2 space-y-1 md:space-y-0 text-sm font-mono mx-4">
+                <div class="text-gray-400 whitespace-nowrap">/help</div>
+                <div class="text-gray-300 whitespace-nowrap"></div>
+                <div class="text-gray-400 sm:truncate">Returns all avalible commands.</div>
+            </div>
+        </div>
+        <a href="/" class="cursor-pointer bg-[#2E2E2E] px-4 py-2 rounded-lg text-white font-medium shadow hover:bg-[#444444] transition text-center mt-5">Return</a>
+    </section>
+</body>
+</html>
