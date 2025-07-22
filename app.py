@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 # Development variable is used to run the server locally, turn off to make it run on vercel.
-development = False
+development = True
 app = Flask(__name__)
 
 SECRET_KEY = os.environ.get("secret_key")
@@ -71,13 +71,10 @@ def user_profile():
     latest = Metric.query.get(1)
     return render_template('dashboard.html', metrics=latest)
 
-@app.route("/calc/catalyst")
+@app.route("/calc/resource_calc")
 def catalystcalc():
-    return render_template("/calc/catalyst.html")
+    return render_template("/calc/resource_calculator.html")
 
-@app.route("/calc/energy_activator")
-def energy_activator_calc():
-    return render_template("/calc/energy_activator.html")
 
 @app.route("/calc")
 def calc_index():
